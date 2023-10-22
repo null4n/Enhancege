@@ -20,6 +20,40 @@ class MainHook : IXposedHookLoadPackage {
                 }
             )
 
+            //Magnification detect
+            XposedHelpers.findAndHookMethod(
+                "com.sonymobile.gameenhancer.floating.mode.AccessibilitySettingHelper",
+                lpparam.classLoader, "isDisplayMagnificationEnabled",
+                object : XC_MethodReplacement() {
+                    override fun replaceHookedMethod(param: MethodHookParam?): Any {
+                        return false
+                    }
+                }
+            )
+
+            //Accessibility detect
+            XposedHelpers.findAndHookMethod(
+                "com.sonymobile.gameenhancer.floating.mode.AccessibilitySettingHelper",
+                lpparam.classLoader, "isDisableShortcut",
+                List::class.java, Set::class.java,
+                object : XC_MethodReplacement() {
+                    override fun replaceHookedMethod(param: MethodHookParam?): Any {
+                        return true
+                    }
+                }
+            )
+            /*
+                        XposedHelpers.findAndHookMethod(
+                            "com.sonymobile.gameenhancer.floating.mode.AccessibilitySettingHelper",
+                            lpparam.classLoader, "isTargetAccessibilityDisabled",
+                            Set::class.java, Set::class.java, Set::class.java,
+                            object : XC_MethodReplacement() {
+                                override fun replaceHookedMethod(param: MethodHookParam?): Any {
+                                    return true
+                                }
+                            }
+                        )
+            */
             //Accessibility conflict detect
             XposedHelpers.findAndHookMethod(
                 "com.sonymobile.gameenhancer.common.util.DeviceStatusUtil",
