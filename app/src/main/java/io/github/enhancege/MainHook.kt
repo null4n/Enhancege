@@ -1,4 +1,4 @@
-package com.example.enhancege
+package io.github.enhancege
 
 import android.content.Context
 import de.robv.android.xposed.IXposedHookLoadPackage

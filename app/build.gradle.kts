@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.enhancege"
+    namespace = "io.github.enhancege"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.enhancege"
+        applicationId = "io.github.enhancege"
         minSdk = 30
         targetSdk = 33
         versionCode = 1
