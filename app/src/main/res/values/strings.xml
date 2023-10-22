@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Enhance Game Enhancer</string>
+    <string name="xposed_description">Remove Xperia Game Enhancer Limitation</string>
+</resources>

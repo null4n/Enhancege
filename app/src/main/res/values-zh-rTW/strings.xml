@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">增強遊戲增強器</string>
+    <string name="xposed_description">去除 Xperia 遊戲增強器限制</string>
+</resources>
